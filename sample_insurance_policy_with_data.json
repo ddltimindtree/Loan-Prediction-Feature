@@ -1,0 +1,79 @@
+{
+  "provider": {
+    "provider_id": "INS-001",
+    "provider_name": "SecureLife Health Insurance",
+    "contact_info": {
+      "phone": "+91-9876543210",
+      "email": "support@securelife.com",
+      "address": "12A, Insurance Tower, Mumbai, India"
+    }
+  },
+  "policies": [
+    {
+      "policy_id": "SL-GOLD-2025",
+      "policy_name": "SecureLife Gold Plan",
+      "type": "Comprehensive",
+      "network": "In-Network",
+      "pre_approval_required": true,
+      "coverage": {
+        "start_date": "2025-01-01",
+        "end_date": "2025-12-31",
+        "covered_services": [
+          "Hospitalization",
+          "Outpatient Care",
+          "Emergency Services",
+          "Maternity",
+          "Mental Health Services"
+        ]
+      },
+      "limits": {
+        "annual_limit": 1000000,
+        "per_visit_limit": 150000,
+        "deductible": 5000,
+        "copay": 10,
+        "coinsurance": 20
+      },
+      "exclusions": [
+        "Cosmetic Surgery",
+        "Fertility Treatments",
+        "Experimental Drugs"
+      ],
+      "extensions": {
+        "wellness_benefits": true,
+        "telemedicine": true,
+        "international_coverage": false
+      }
+    },
+    {
+      "policy_id": "SL-BASIC-2025",
+      "policy_name": "SecureLife Basic Plan",
+      "type": "Basic",
+      "network": "Out-of-Network",
+      "pre_approval_required": false,
+      "coverage": {
+        "start_date": "2025-01-01",
+        "end_date": "2025-12-31",
+        "covered_services": [
+          "Hospitalization",
+          "Emergency Services"
+        ]
+      },
+      "limits": {
+        "annual_limit": 500000,
+        "per_visit_limit": 75000,
+        "deductible": 10000,
+        "copay": 20,
+        "coinsurance": 30
+      },
+      "exclusions": [
+        "Dental Care",
+        "Vision Care",
+        "Alternative Therapies"
+      ],
+      "extensions": {
+        "wellness_benefits": false,
+        "telemedicine": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InsurancePolicySchema",
+  "type": "object",
+  "properties": {
+    "provider": {
+      "type": "object",
+      "properties": {
+        "provider_id": {
+          "type": "string"
+        },
+        "provider_name": {
+          "type": "string"
+        },
+        "contact_info": {
+          "type": "object",
+          "properties": {
+            "phone": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "address": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "phone",
+            "email",
+            "address"
+          ]
+        }
+      },
+      "required": [
+        "provider_id",
+        "provider_name",
+        "contact_info"
+      ]
+    },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "policy_id": {
+            "type": "string"
+          },
+          "policy_name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "network": {
+            "type": "string"
+          },
+          "pre_approval_required": {
+            "type": "boolean"
+          },
+          "coverage": {
+            "type": "object",
+            "properties": {
+              "start_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "end_date": {
+                "type": "string",
+                "format": "date"
+              },
+              "covered_services": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "start_date",
+              "end_date",
+              "covered_services"
+            ]
+          },
+          "limits": {
+            "type": "object",
+            "properties": {
+              "annual_limit": {
+                "type": "number"
+              },
+              "per_visit_limit": {
+                "type": "number"
+              },
+              "deductible": {
+                "type": "number"
+              },
+              "copay": {
+                "type": "number"
+              },
+              "coinsurance": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "annual_limit",
+              "per_visit_limit",
+              "deductible",
+              "copay",
+              "coinsurance"
+            ]
+          },
+          "exclusions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "extensions": {
+            "type": "object",
+            "description": "Optional fields for insurer-specific data",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "policy_id",
+          "policy_name",
+          "type",
+          "network",
+          "pre_approval_required",
+          "coverage",
+          "limits",
+          "exclusions"
+        ]
+      }
+    }
+  },
+  "required": [
+    "provider",
+    "policies"
+  ]
+}
